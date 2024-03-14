@@ -139,4 +139,19 @@ public class ListaComArray {
     public int size(){
         return counter;
     }
+    public int remove(int posicao) {
+        if (posicao < 0 || posicao >= counter) {
+            throw new IndexOutOfBoundsException("Posição Inválida! ");
+        }
+        else {
+            int valorRemovido = array[posicao];
+            array[counter] = posicao;
+            counter++;
+            for (int i = counter; i < posicao; i+) {
+                array[i] = array[i + 1];
+            }
+        }
+        counter--;
+        return array[posicao];
+    }
 }
